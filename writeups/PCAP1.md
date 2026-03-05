@@ -10,21 +10,85 @@ This report documents the forensic analysis of a network packet capture to ident
 
 ---
 
-**Question 1:** Which protocol was used over port 3942?
+### **Question 1: What is the WebAdmin password?**
 
-* **Display Filter:** `udp.port == 3942`
+**Display Filter:** `http` 
+
+
 * **Methodology:**
-1. Applied the port filter to isolate all traffic associated with the specific port.
-2. Inspected the **Protocol** column in the packet list pane.
-3. Analyzed the packet details; the traffic consists of UDP-based discovery messages.
+1. Applied a general `http` filter to isolate web traffic and reduce network noise. 
 
-* Screenshot: pcap-network-analysis/images/SBT-PCAP1/q1_ssdp_port3942.png
-* Description: Wireshark packet details showing SSDP discovery traffic (M-SEARCH) over UDP port 3942.
 
-* **Answer:** **SSDP** (Simple Service Discovery Protocol).
-* **Observation:** SSDP is commonly used for UPnP (Universal Plug and Play) to discover devices on a network.
+2. Used the **Find Packet** (Ctrl+F) tool with the search type set to **String** and searched in **Packet bytes** for the keyword **"password"**. 
+
+
+3. Located a packet containing an **HTTP GET** request for the file `/password.txt`. 
+
+
+4. Right-clicked the corresponding server response and selected **Follow > HTTP Stream** to reconstruct the plaintext data. 
+
+
+
+
+* 
+**Screenshot: `q1_webadmin_credential_harvesting.png**` 
+
+
+* 
+**Description:** This screenshot captures the reconstructed HTTP data stream showing the server's response to the GET request for `password.txt`. It clearly reveals the administrative credentials stored in plaintext: `WebAdmin Password: sbt123`. 
+
+
+* 
+**Answer:** **`sbt123`** 
+
+
+* 
+**Observation:** Storing sensitive credentials in a publicly accessible plaintext file within the web root is a severe misconfiguration. This oversight allowed the attacker to gain administrative access without needing to deploy complex exploits or brute-force tools. 
+
+For your GitHub writeup, the most professional and descriptive name for this screenshot would be:
+
+**Screenshot Name: `q1_webadmin_credential_harvesting.png**` 
 
 ---
+
+### **Question 1: What is the WebAdmin password?**
+
+* 
+**Display Filter:** `http` 
+
+
+* **Methodology:**
+1. Applied a general `http` filter to isolate web traffic and reduce network noise. 
+
+
+2. Used the **Find Packet** (Ctrl+F) tool with the search type set to **String** and searched in **Packet bytes** for the keyword **"password"**. 
+
+
+3. Located a packet containing an **HTTP GET** request for the file `/password.txt`. 
+
+
+4. Right-clicked the corresponding server response and selected **Follow > HTTP Stream** to reconstruct the plaintext data. 
+
+
+
+
+* 
+**Screenshot: `q1_webadmin_credential_harvesting.png**` 
+
+
+* 
+**Description:** This screenshot captures the reconstructed HTTP data stream showing the server's response to the GET request for `password.txt`. It clearly reveals the administrative credentials stored in plaintext: `WebAdmin Password: sbt123`. 
+
+
+* 
+**Answer:** **`sbt123`** 
+
+
+* 
+**Observation:** Storing sensitive credentials in a publicly accessible plaintext file within the web root is a severe misconfiguration. This oversight allowed the attacker to gain administrative access without needing to deploy complex exploits or brute-force tools. 
+
+
+
 
 **Question 2:** What is the IP address of the host that was pinged twice?
 
