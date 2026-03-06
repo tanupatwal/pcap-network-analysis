@@ -75,6 +75,10 @@ pcap-network-analysis/
 │
 └── README.md
 
+**Folder Description**
+
+* images/
+
 Contains visual evidence and screenshots captured during investigation. Each challenge (SBT-PCAP1 through SBT-PCAP5) has its own dedicated sub-folder for organized reference.
 
 * pcap_files/
