@@ -1,22 +1,25 @@
-# PCAP Network Analysis Repository
+### PCAP Network Analysis Repository
 
-This repository contains multiple **network traffic analysis investigations** performed on packet capture (PCAP) files using **Wireshark** and related tools.
+**This repository contains multiple network traffic analysis investigations performed on packet capture (PCAP) files using Wireshark, tcpdump, and other command-line forensic tools.**
 
-The goal of this project is to practice and demonstrate skills in:
+** The goal of this project is to practice and demonstrate skills in:**
 
-* Network packet inspection
-* Protocol analysis
-* Traffic filtering
-* Network forensics investigation
-* Wireshark usage for cybersecurity analysis
+* Network packet inspection and deep-packet analysis
 
-Each PCAP file is analyzed and documented with a structured methodology including filters used, observations, screenshots, and conclusions.
+* Protocol distribution and behavioral analysis
 
----
+* Metadata extraction (User-Agents, SSH banners, Checksums)
 
-# Repository Structure
+* Network forensics and incident response investigation
 
-```
+* Advanced traffic filtering using bitwise offsets
+
+**Data Source & Credits**
+
+* The PCAP files analyzed in this repository are part of the training labs provided by Security Blue Team (SBT). These investigations simulate real-world scenarios encountered by SOC analysts and network forensic investigators, focusing on identifying malicious activity and extracting technical artifacts from raw traffic.
+
+**Repository Structure**
+
 pcap-network-analysis
 │
 ├── images
@@ -25,6 +28,32 @@ pcap-network-analysis
 │   │   ├── q2_icmp_ping.png
 │   │   ├── q3_dns_responses.png
 │   │   └── q4_endpoints_list.png
+│   ├── SBT-PCAP2
+│   │   ├── q1_webadmin_credential_harvesting.png
+│   │   ├── q1_webadmin_pass.png
+│   │   ├── q2_ftp_banner_version.png
+│   │   ├── q3_ftp_command_execution.png
+│   │   ├── q4_confidential_file_discovery.png
+│   │   ├── q4_smb_desktop_recon.png
+│   │   └── q5_smb_logfile_artifact.png
+│   ├── SBT-PCAP3
+│   │   ├── q1_attacker_mac_identification.png
+│   │   ├── q2_arp_network_scan.png
+│   │   ├── q2_arp_poisoning_evidence.png
+│   │   ├── q3_ftp_file_retrieval.png
+│   │   ├── q4_borden_department_search.png
+│   │   └── q5_domadmin_password_extraction.png
+│   ├── SBT-PCAP4
+│   │   ├── q1_udp_packet_count.png
+│   │   ├── q2_tcp_syn_ack_count.png
+│   │   ├── q3_chrome_version_identification.png
+│   │   └── q4_ttl_field_analysis.png
+│   └── SBT-PCAP5
+│       ├── Terminal_PNG_Extraction.png
+│       ├── Terminal_SSH_Version_Handshake.png
+│       ├── Terminal_Zip_Port_Extraction.png
+│       ├── Wireshark_HTTP_Initial_Request.png
+│       └── Wireshark_TCP_Checksum_Filter.png
 │
 ├── pcap_files
 │   ├── SBT-PCAP1.pcapng
@@ -34,97 +63,51 @@ pcap-network-analysis
 │   └── SBT-PCAP5.pcap
 │
 ├── writeups
-│   ├── pcap1.md
-│   ├── pcap2.md
-│   ├── pcap3.md
-│   ├── pcap4.md
-│   └── pcap5.md
+│   ├── PCAP1.md
+│   ├── PCAP2.md
+│   ├── PCAP3.md
+│   ├── PCAP4.md
+│   └── PCAP5.md
 │
 └── README.md
-```
 
----
 
-# Folder Description
+**Folder Description**
 
-### images/
+* images/
 
-Contains screenshots taken during Wireshark analysis.
+Contains visual evidence and screenshots captured during investigation. Each challenge (SBT-PCAP1 through SBT-PCAP5) has its own dedicated sub-folder for organized reference.
 
-Each PCAP has its own folder containing screenshots used in the corresponding investigation report.
+* pcap_files/
 
-Example:
+Contains the raw binary packet capture files. These are the primary data sources used for the forensic investigations.
 
-```
-images/SBT-PCAP1/
-```
+* writeups/
 
----
+Contains detailed, structured analysis reports in Markdown format. Each report documents tools used, methodology, and final findings.
 
-### pcap_files/
+**Tools Used**
 
-Contains the original **packet capture files** used for analysis.
+* Wireshark – Graphical packet analysis and protocol dissection.
 
-These files are opened in Wireshark for investigation.
+* tcpdump – Command-line packet capture and bitwise offset filtering.
 
-Example:
+* strings / grep – Identification of cleartext data and metadata within binary streams.
 
-```
-SBT-PCAP1.pcapng
-```
+* awk / cut – Automated parsing of network header information.
 
----
+**Key Investigation Topics**
 
-### writeups/
+* Credential Harvesting: Extracting cleartext passwords from HTTP/FTP/SMB.
 
-Contains detailed **analysis reports** for each PCAP file.
+* Banner Grabbing: Identifying server OS and software versions (e.g., OpenSSH 7.9p1 on Debian).
 
-Each report includes:
+* Protocol Distribution: Quantifying traffic volume across TCP, UDP, and ICMP.
 
-* Investigation questions
-* Display filters used
-* Methodology
-* Observations
-* Screenshots
-* Final answers
+* Forensic Metadata: Locating specific packets using TCP checksums and identifying User-Agent strings.
 
-Example:
+* Network Reconnaissance: Identifying ARP scanning and MAC spoofing attempts.
 
-```
-writeups/pcap1.md
-```
+**Purpose**
 
----
-
-# Tools Used
-
-* **Wireshark** – Packet capture analysis
-* **tshark** – Command-line packet analysis
-* **GitHub** – Documentation and project hosting
-* **tcpdump** – Packet capture analysis
-
----
-
-# Example Investigation Topics
-
-Some of the network analysis tasks included in this repository:
-
-* Identifying protocols used on specific ports
-* Investigating ICMP traffic
-* Counting DNS responses
-* Identifying hosts transmitting the most data
-* Analyzing network communication patterns
-
----
-
-# Purpose of this Project
-
-This project is part of **cybersecurity and network analysis practice** to build hands-on experience in:
-
-* Network traffic investigation
-* Packet-level analysis
-* Digital forensics techniques
-* Blue Team / SOC analyst skill development
-
----
-
+* This repository serves as a portfolio for Cybersecurity and Network Defense skills, focusing on the ability to translate raw network data into actionable intelligence.
