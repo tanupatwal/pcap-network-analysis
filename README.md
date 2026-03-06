@@ -20,15 +20,16 @@
 
 **Repository Structure**
 
-pcap-network-analysis
+pcap-network-analysis/
 │
-├── images
-│   ├── SBT-PCAP1
+├── images/
+│   ├── SBT-PCAP1/
 │   │   ├── q1_ssdp_port3942.png
 │   │   ├── q2_icmp_ping.png
 │   │   ├── q3_dns_responses.png
 │   │   └── q4_endpoints_list.png
-│   ├── SBT-PCAP2
+│   │
+│   ├── SBT-PCAP2/
 │   │   ├── q1_webadmin_credential_harvesting.png
 │   │   ├── q1_webadmin_pass.png
 │   │   ├── q2_ftp_banner_version.png
@@ -36,33 +37,36 @@ pcap-network-analysis
 │   │   ├── q4_confidential_file_discovery.png
 │   │   ├── q4_smb_desktop_recon.png
 │   │   └── q5_smb_logfile_artifact.png
-│   ├── SBT-PCAP3
+│   │
+│   ├── SBT-PCAP3/
 │   │   ├── q1_attacker_mac_identification.png
 │   │   ├── q2_arp_network_scan.png
 │   │   ├── q2_arp_poisoning_evidence.png
 │   │   ├── q3_ftp_file_retrieval.png
 │   │   ├── q4_borden_department_search.png
 │   │   └── q5_domadmin_password_extraction.png
-│   ├── SBT-PCAP4
+│   │
+│   ├── SBT-PCAP4/
 │   │   ├── q1_udp_packet_count.png
 │   │   ├── q2_tcp_syn_ack_count.png
 │   │   ├── q3_chrome_version_identification.png
 │   │   └── q4_ttl_field_analysis.png
-│   └── SBT-PCAP5
+│   │
+│   └── SBT-PCAP5/
 │       ├── Terminal_PNG_Extraction.png
 │       ├── Terminal_SSH_Version_Handshake.png
 │       ├── Terminal_Zip_Port_Extraction.png
 │       ├── Wireshark_HTTP_Initial_Request.png
 │       └── Wireshark_TCP_Checksum_Filter.png
 │
-├── pcap_files
+├── pcap_files/
 │   ├── SBT-PCAP1.pcapng
 │   ├── SBT-PCAP2.pcapng
 │   ├── SBT-PCAP3.pcapng
 │   ├── SBT-PCAP4.pcap
 │   └── SBT-PCAP5.pcap
 │
-├── writeups
+├── writeups/
 │   ├── PCAP1.md
 │   ├── PCAP2.md
 │   ├── PCAP3.md
@@ -70,11 +74,6 @@ pcap-network-analysis
 │   └── PCAP5.md
 │
 └── README.md
-
-
-**Folder Description**
-
-* images/
 
 Contains visual evidence and screenshots captured during investigation. Each challenge (SBT-PCAP1 through SBT-PCAP5) has its own dedicated sub-folder for organized reference.
 
