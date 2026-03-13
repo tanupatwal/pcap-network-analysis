@@ -1,5 +1,7 @@
 ### PCAP Network Analysis Repository
 
+This repository serves as a professional Digital Forensics and Incident Response (DFIR) portfolio focused on network forensic analysis. Its purpose is to showcase the analytical skills required to investigate raw packet captures, uncover malicious activities, and extract critical threat indicators. Using industry-standard tools such as Wireshark and TShark, these investigations explore and analyze core network protocols including SMB, FTP, ARP, and HTTP.
+
 **This repository contains multiple network traffic analysis investigations performed on packet capture (PCAP) files using Wireshark, tcpdump, and other command-line forensic tools.**
 
 ** The goal of this project is to practice and demonstrate skills in:**
@@ -13,6 +15,35 @@
 * Network forensics and incident response investigation
 
 * Advanced traffic filtering using bitwise offsets
+
+## Methodology
+
+The analytical approach applied across these investigations follows a structured DFIR workflow:
+* **Triage**: Initial assessment of the network traffic to determine scope, identify key endpoints, and isolate sessions of interest.
+* **Protocol Analysis**: Deep-dive inspection into specific communications to reconstruct attacker behavior, identify anomalies, and understand the timeline of events.
+* **Artifact Extraction**: Carving underlying files, extracting cleartext credentials, and pulling metadata directly from the network streams for concrete evidence.
+
+## Skills & Tools
+
+**Core Tools utilized:**
+* Wireshark
+* TShark
+
+**Analyzed Protocols:**
+* SMB
+* FTP
+* ARP
+* HTTP
+
+## Key Findings
+
+| Investigation | Protocol | Threat Identified |
+| :--- | :--- | :--- |
+| SBT-PCAP1 | DNS, ICMP | Network Discovery & Endpoint Enumeration |
+| SBT-PCAP2 | HTTP, FTP, SMB | Credential Harvesting & Unauthorized File Discovery |
+| SBT-PCAP3 | ARP, FTP | ARP Poisoning, Scanning & Password Extraction |
+| SBT-PCAP4 | TCP, UDP | Network Probing & Traffic Volume Anomalies |
+| SBT-PCAP5 | HTTP, SSH | Initial Access & Arbitrary Data Extraction |
 
 **Data Source & Credits**
 
